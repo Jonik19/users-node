@@ -1,0 +1,26 @@
+<div class="container_12">
+  <div class="grid_9">&nbsp</div>
+  <div class="grid_3">
+    <a href="#/users/create" class="btn  btn__wide">Создать</a>
+  </div>
+</div>
+
+<div class="container_12">
+  <div class="grid_12">
+    <table class="item-desc-table">
+      <tr>
+        <td>Ник</td>
+        <td>Имя</td>
+        <td>Возраст</td>
+        <td>Действия</td>
+      </tr>
+      <tr ng-repeat="user in users.list">
+        <td>{{ user.username }}</td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.age || '-'}}</td>
+        <td><a href="#/users/edit/{{user.id}}" class="btn btn__gray btn__md">Редактировать</a>
+        <button ng-click="users.delete(user.id, user)" class="btn btn__gray btn__md">Удалить</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
