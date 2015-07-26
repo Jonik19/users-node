@@ -8,7 +8,7 @@ var config = require('../config');
 module.exports = {
   index: function (req, res, next) {
     var page = req.query.page || 1;
-    var limit = (page-1)*config.view.users.perPage;
+    var limit = (page-1)*req.body.perPage;
 
     UserModel.findAll({
       attributes: ['id', 'username', 'first_name', 'age']

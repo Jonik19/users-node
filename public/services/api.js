@@ -64,10 +64,15 @@
     factory.getUsers = function (options) {
       var deffered = $q.defer();
 
+      if(options) {
+        var page = options.page || 1;
+        var perPage = options.perPage || 10;
+      };
+
       $http({
         method: 'GET',
-        url: '/users',
-        data: options
+        url: '/users?page='+page+'&perPage='+perPage
+
       }).then(function (response) {
           deffered.resolve(response.data);
       });

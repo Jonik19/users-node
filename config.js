@@ -7,15 +7,10 @@ var config = {
     user: 'danil',
     password: '123',
 
-    forcing: false
+    forcing: false // create tables every node start ?
   },
   auth: {
     salt: 'mysalt.v1'
-  },
-  view: {
-    users: {
-      perPage: 10
-    }
   }
 };
 
